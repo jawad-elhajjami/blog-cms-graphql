@@ -28,11 +28,15 @@ const Categories = () => {
       <h3 className='text-white text-xl font-semibold border-b border-white/30 pb-4 mb-4'>Categories</h3>
 
       {
-        categories.map((category) => (
-          <div key={category.slug} className='flex items-center justify-between w-full [&:not(:last-child)]:mb-4'>
-            <p className="text-white hover:text-pink-500 duration-100">{category.name}</p>
-            <div className='count bg-pink-700 w-6 h-fit text-center text-white rounded-md'>{counts[category.slug] || 0}</div>
-          </div>
+        categories.map((category, index) => (
+            <Link
+                className='flex items-center justify-between w-full [&:not(:last-child)]:mb-4'
+                key={index}
+                href={`/category/${category.slug}`}
+            >
+              <p className="text-white hover:text-pink-500 duration-100">{category.name}</p>
+              <div className='count bg-pink-700 w-6 h-fit text-center text-white rounded-md'>{counts[category.slug] || 0}</div>
+            </Link>
         ))
       }
 

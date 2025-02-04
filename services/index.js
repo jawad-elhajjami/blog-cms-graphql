@@ -91,6 +91,58 @@ export const getRecentPosts = async () => {
     return result.posts;
 };
 
+export const getCategoryPost = async (slug) => {
+  if (!slug) {
+    console.error("getCategoryPost: slug is required but not provided.");
+    return [];
+  }
+
+  const query = gql`
+    query GetCategoryPost($slug: String!) {
+      postsConnection(where: { categories_some: { slug: $slug } }) {
+        edges {
+          cursor
+          node {
+            author {
+              bio
+              name
+              id
+              photo {
+                url
+              }
+            }
+            createdAt
+            slug
+            title
+            excrept
+            featuredImage {
+              url
+            }
+            categories {
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  try {
+    const result = await request(graphqlAPI, query, { slug });
+
+    if (!result || !result.postsConnection) {
+      console.error("Invalid GraphQL response:", result);
+      return [];
+    }
+
+    return result.postsConnection.edges;
+  } catch (error) {
+    console.error("Error fetching category posts:", error);
+    return [];
+  }
+};
+
 
 export const getSimilarPosts = async (categories, slug) => {
     const query = gql`
@@ -169,3 +221,67 @@ export const getComments = async (slug) => {
   const result = await request(graphqlAPI, query, {slug});
   return result.comments;
 }
+export const getAdjacentPosts = async (createdAt, slug) => {
+  const query = gql`
+    query GetAdjacentPosts($createdAt: DateTime!,$slug:String!) {
+      next:posts(
+        first: 1
+        orderBy: createdAt_ASC
+        where: {slug_not: $slug, AND: {createdAt_gte: $createdAt}}
+      ) {
+        title
+        featuredImage {
+          url
+        }
+        createdAt
+        slug
+      }
+      previous:posts(
+        first: 1
+        orderBy: createdAt_DESC
+        where: {slug_not: $slug, AND: {createdAt_lte: $createdAt}}
+      ) {
+        title
+        featuredImage {
+          url
+        }
+        createdAt
+        slug
+      }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query, { slug, createdAt });
+
+  return { next: result.next[0], previous: result.previous[0] };
+};
+
+
+export const getFeaturedPosts = async () => {
+  const query = gql`
+    query GetFeaturedPosts {  # ✅ Corrected query name
+      posts(where: {featuredPost: true}) {
+        author {
+          name
+          photo {
+            url
+          }
+        }
+        featuredImage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }   
+  `;
+
+  try {
+    const result = await request(graphqlAPI, query);
+    return result.posts;
+  } catch (error) {
+    console.error("Error fetching featured posts:", error);
+    return [];
+  }
+};
