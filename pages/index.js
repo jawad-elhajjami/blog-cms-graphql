@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { PostCard, PostWidget, Categories, Footer } from '@/components';
+import { PostCard, PostWidget, Categories, Footer, Newsletter } from '@/components';
 import { FeaturedPosts } from '../sections/index';
 import { getPosts } from '@/services'
 
@@ -10,6 +10,7 @@ export default function Home({posts}) {
         <title>Personal Blog</title>
       </Head>
       <FeaturedPosts />
+      <Newsletter />
       <main className='grid grid-cols-1 lg:grid-cols-12 gap-4 mt-8'>
         <div className='lg:col-span-8 col-span-1 mb-8'>
           <div className='grid lg:grid-cols-8 gap-4'>
@@ -17,7 +18,7 @@ export default function Home({posts}) {
           </div>
         </div>
         <div className='lg:col-span-4 col-span-1'>
-            <div className='lg:sticky relative top-8'>
+            <div className='lg:sticky relative top-0'>
                 <PostWidget />
                 <Categories />
             </div>
