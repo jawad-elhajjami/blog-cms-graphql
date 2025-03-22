@@ -12,4 +12,5 @@ export {default as PostDetail} from './PostDetail'
 export {default as Footer} from './Footer'
 export {default as Newsletter} from './Newsletter'
 export {default as Modal} from './Modal'
+export {default as Loader} from './Loader'
 
