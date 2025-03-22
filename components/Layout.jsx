@@ -11,11 +11,12 @@ import {Header, Modal} from './'
 
 
 function Layout({children}) {
+  
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
   return (
     <div>
         <Header toggleModal={toggleModal} />
@@ -63,12 +64,6 @@ function Layout({children}) {
               </a>
               
           </div>
-          <button
-            onClick={toggleModal}
-            className="mt-4 bg-red-500 text-white px-4 py-2 rounded-lg"
-          >
-            Close Modal
-          </button>
         </Modal>
     </div>
   )

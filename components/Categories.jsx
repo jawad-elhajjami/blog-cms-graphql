@@ -5,7 +5,7 @@ import { getCategories, getPostsCountPerCategory } from '@/services'
 const Categories = () => {
 
   const [categories, setCategories] = useState([]);
-  const [counts, setCounts] = useState({}); // To store the post counts per category
+  const [counts, setCounts] = useState({});
 
   useEffect(() => {
     // Fetch categories
