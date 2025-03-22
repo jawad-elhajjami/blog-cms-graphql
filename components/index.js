@@ -11,4 +11,5 @@ export {default as CommentsForm} from './CommentsForm'
 export {default as PostDetail} from './PostDetail'
 export {default as Footer} from './Footer'
 export {default as Newsletter} from './Newsletter'
+export {default as Modal} from './Modal'
 

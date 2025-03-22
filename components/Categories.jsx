@@ -24,7 +24,7 @@ const Categories = () => {
 
 
   return (
-    <div className='bg-gray-900/50 backdrop-blur-2xl p-4 mt-8 rounded-lg border border-gray-800'>
+    <div className='bg-gray-900/50 backdrop-blur-2xl p-4 rounded-lg border border-gray-800 mb-8'>
       <h3 className='text-white text-xl font-semibold border-b border-white/30 pb-4 mb-4'>Categories</h3>
 
       {

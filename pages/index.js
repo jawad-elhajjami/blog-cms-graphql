@@ -1,11 +1,12 @@
 import Head from 'next/head'
-import { PostCard, PostWidget, Categories, Newsletter } from '@/components';
+import { PostCard, PostWidget, Categories, Newsletter, Modal } from '@/components';
 import { FeaturedPosts } from '../sections/index';
 import { getPosts } from '@/services'
 
 export default function Home({posts}) {
+  
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-4">
       <Head>
         <title>Personal Blog</title>
       </Head>

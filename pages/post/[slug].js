@@ -5,7 +5,7 @@ import {PostDetail, Categories, PostWidget, Author, Comments, CommentsForm} from
 const PostDetails = ({post}) => {
 console.log(post);
   return (
-    <div className='container mx-auto mb-8'>
+    <div className='container mx-auto mb-8 px-4'>
       <div className='grid grid-cols-1 lg:grid-cols-12 gap-6'>
         <div className='col-span-1 lg:col-span-8'>
             <PostDetail post={post} />

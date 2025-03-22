@@ -16,7 +16,7 @@ const FeaturedPostCard = ({ post }) => (
           alt={post.author.name}
           height="30"
           width="30"
-          className="align-middle drop-shadow-lg rounded-full"
+          className="align-middle drop-shadow-lg rounded-full w-12 h-12 object-cover"
           src={post.author.photo.url}
         />
         <p className="inline align-middle text-white text-shadow ml-2 font-medium">{post.author.name}</p>

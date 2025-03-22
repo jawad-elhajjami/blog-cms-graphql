@@ -60,8 +60,8 @@ const Newsletter = () => {
           <button className='bg-pink-600 mb-4 py-3 px-6 rounded-lg font-semibold text-lg text-white duration-500 hover:bg-white hover:text-pink-600' onClick={handleSubscription}>Subscribe</button>
         </div>
         <div className='flex w-full'>
-            {showSuccessMessage && <span className='text-md font-normal text-green-600 block mt-4 duration-200 transition-all'>Thanks for subscribing to the newsletter !</span>}
-            {error && <p className='text-md block text-red-600 rounded-lg mt-4 duration-200 transition-all'>Oops ! there is an error.</p>}
+            {showSuccessMessage && <span className='text-md font-normal text-green-600 block mt-4 duration-200 transition-all bg-white p-2 rounded-lg'>Thanks for subscribing to the newsletter !</span>}
+            {error && <p className='text-md block text-red-600 rounded-lg mt-4 duration-200 transition-all bg-white p-2'>Oops ! there is an error.</p>}
         </div>
         <Image
             width={250}

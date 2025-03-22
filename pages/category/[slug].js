@@ -12,15 +12,15 @@ const CategoryPost = ({ posts }) => {
   }
 
   return (
-    <div className="container mx-auto px-10 mt-8 mb-8 min-h-[100vh]">
+    <div className="container mx-auto px-4 mt-8 mb-8 min-h-[100vh]">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="grid lg:grid-cols-8 gap-4 col-span-8">
           {posts.map((post, index) => (
             <PostCard key={index} post={post.node} />
           ))}
         </div>
-        <div className="col-span-1 lg:col-span-4">
-          <div className="relative lg:sticky top-8">
+        <div className="lg:col-span-4 col-span-8 w-full">
+          <div className="relative lg:sticky lg:top-8 w-full">
             <Categories />
           </div>
         </div>
