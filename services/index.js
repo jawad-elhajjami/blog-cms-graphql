@@ -208,10 +208,23 @@ export const submitComment = async (obj) => {
     return result.json()
 }
 
+// subscribe to newsletter
+export const submitEmail = async (obj) =>{
+  const result = await fetch('/api/subscribers',{
+    method: 'POST',
+    headers:{
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(obj)
+  })
+  
+  return result.json()
+}
+
 export const getComments = async (slug) => {
   const query = gql`
       query GetComments($slug: String!){
-          comments(where:{post:{slug: $slug}}){
+          comments(where:{post:{slug: $slug}}, orderBy: createdAt_DESC){
               name
               createdAt
               comment

@@ -12,7 +12,7 @@ const CategoryPost = ({ posts }) => {
   }
 
   return (
-    <div className="container mx-auto px-10 mt-8 mb-8">
+    <div className="container mx-auto px-10 mt-8 mb-8 min-h-[100vh]">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="grid lg:grid-cols-8 gap-4 col-span-8">
           {posts.map((post, index) => (

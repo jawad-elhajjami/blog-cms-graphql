@@ -48,7 +48,7 @@ const FeaturedPosts = () => {
   );
 
   return (
-    <div className="mb-8 mt-8 relative">
+    <div className="mb-8 mt-8 relative select-none">
       <Carousel infinite responsive={responsive} itemClass="px-4">
         {dataLoaded && featuredPosts.map((post, index) => (
           <FeaturedPostCard key={index} post={post} />
