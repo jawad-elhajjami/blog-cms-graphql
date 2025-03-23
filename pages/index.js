@@ -15,7 +15,7 @@ export default function Home({posts}) {
       <main className='grid grid-cols-1 lg:grid-cols-12 gap-4 mt-8'>
         <div className='lg:col-span-8 col-span-1 mb-8'>
           <div className='grid lg:grid-cols-8 gap-4'>
-            {posts.map((post) => <PostCard post={post.node} key={post.title} />)}
+            {posts.map((post,index) => <PostCard post={post.node} key={index} />)}
           </div>
         </div>
         <div className='lg:col-span-4 col-span-1'>

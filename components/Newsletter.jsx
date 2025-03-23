@@ -67,6 +67,7 @@ const Newsletter = () => {
             width={250}
             height={250}
             src={icon}
+            alt="Newsletter icon"
             className='absolute right-20 top-0 hidden lg:block'
         />
     </div>

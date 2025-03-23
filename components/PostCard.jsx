@@ -18,7 +18,7 @@ const PostCard = ({post}) => {
       />
       <div className='p-8 flex flex-col justify-between h-full'>
         <div className='flex items-center gap-4'>
-          {post.categories.map((category) => <p className='text-white bg-gray-700/80 border border-white/10 shadow-lg text-sm hover:shadow-blue-600/50 duration-300 w-fit px-4 rounded-full'>{category.name}</p>)}
+          {post.categories.map((category) => <p key={category.name} className='text-white bg-gray-700/80 border border-white/10 shadow-lg text-sm hover:shadow-blue-600/50 duration-300 w-fit px-4 rounded-full'>{category.name}</p>)}
         </div>
 
         <div>
