@@ -1,3 +1,4 @@
+![Blog Screenshot](Capture.JPG)
 
 # Blog Project
 
